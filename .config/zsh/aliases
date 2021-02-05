@@ -1,0 +1,101 @@
+# -------------------------------------
+# System
+# -------------------------------------
+
+alias shutdown='shutdown now'
+alias restart='reboot'
+alias suspend='pm-suspend'
+
+# -------------------------------------
+# ls
+# -------------------------------------
+
+alias ls='ls --color=auto --group-directories-first'
+alias lsl='ls -l'
+alias ll='ls -lah'
+alias la='ls -A'
+
+# -------------------------------------
+# File Management
+# -------------------------------------
+
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias rm='rm -i'
+
+# -------------------------------------
+# Pacman
+# -------------------------------------
+
+alias paci='sudo pacman -S'             # install
+alias pacs='sudo pacman -Ss'            # search
+alias pacu='sudo pacman -Syu'           # update
+alias pacr='sudo pacman -R'             # remove package
+alias pacrr='sudo pacman -Rs'           # remove package + unused dependencies
+alias pacrc='sudo pacman -Sc'           # remove cache
+alias pacrcc='sudo pacman -Scc'         # empty cache
+alias pacls='sudo pacman -Qe'           # list installed packages
+alias pacru='sudo pacman -Rns $(pacman -Qtdq)'
+alias pacum='sudo reflector --latest 10 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
+
+# -------------------------------------
+# Yay
+# -------------------------------------
+
+alias yayi='yay -S'                     # install
+alias yays='yay -Ss'                    # search
+alias yayu='yay -Syu'                   # update
+alias yayr='yay -R'                     # remove package
+alias yayrr='yay -Rs'                   # remove package + unused dependencies
+alias yayrc='yay -Sc'                   # remove cache
+alias yayls='yay -Qe'                   # list installed packages
+
+# -------------------------------------
+# Neovim
+# -------------------------------------
+
+alias vim='nvim'
+alias vi='nvim'
+alias svim='sudoedit'
+alias v='nvim'
+
+# -------------------------------------
+# Dotfiles configuration
+# -------------------------------------
+
+alias xinitrc='vim ~/.xinitrc'
+alias zshrc='vim ~/.zshrc'
+alias aliasesrc='vim ~/.config/zsh/aliases'
+alias kittyrc='vim ~/.config/kitty/kitty.conf'
+alias alacrittyrc='vim ~/.config/alacritty/alacritty.yml'
+alias bspwmrc='vim ~/.config/bspwm/bspwmrc'
+alias sxhkdrc='vim ~/.config/sxhkd/sxhkdrc'
+alias vimrc='vim ~/.config/nvim/init.vim'
+alias picomrc='vim ~/.config/picom/picom.conf'
+alias polybarrc='vim ~/.config/polybar/config'
+alias vifmrc='vim ~/.config/vifm/vifmrc'
+
+# -------------------------------------
+# Personal
+# -------------------------------------
+
+# Folders
+alias coding='mkdir -p $HOME/coding/$(date +%Y)'
+alias site='cd $HOME/coding/$(date +%Y); mkdir -p '
+alias tests='cd $HOME/coding/tests'
+
+# Apps
+alias vf="./.config/vifm/scripts/vifmrun"
+
+# utilities
+alias fonts='fc-cache -f -v'
+alias reset='cd ~; clear; source ~/.zshrc'
+alias fetch='clear && neofetch'
+alias c='clear'
+
+# -------------------------------------
+# Git
+# -------------------------------------
+
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
