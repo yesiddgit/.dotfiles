@@ -58,6 +58,7 @@ git config --global user.email yesiddgarzon@gmail.com
 git config --global color.ui true
 git config --global core.editor nvim
 ssh-keygen -t rsa -C yesiddgarzon@gmail.com
+ssh -T git@github.com
 
 # Clone dotfiles
 git clone https://github.com/yesiddgit/dotfiles.git
