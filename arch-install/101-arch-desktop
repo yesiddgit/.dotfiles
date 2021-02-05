@@ -1,0 +1,63 @@
+#!/bin/bash
+
+# Setup YAY
+cd ~/.config
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd $HOME
+
+# Install esential packages
+pacman=(
+  xf86-video-nouveau
+  xf86-input-libinput
+  pulseaudio
+  pulseaudio-alsa
+  numlockx
+  pamixer
+  xorg-xinit
+  xorg-server
+  xorg-xsetroot
+  arandr
+  bspwm
+  sxhkd
+  dmenu
+  rofi
+  nitrogen
+  picom
+  kitty
+  chromium
+  gvfs
+  zsh
+  lxsession
+  neovim
+  playerctl
+  unrar
+  ueberzug
+  xsel
+  openssh
+)
+
+yay=(
+  polybar
+)
+
+sudo pacman -S --noconfirm ${pacman[@]}
+yay -S --noconfirm ${yay[@]}
+
+# Oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+# Change shell
+chsh -s $(which zsh) yesidd
+
+# Git config
+git config --global user.name yesiddgit
+git config --global user.email yesiddgarzon@gmail.com
+git config --global color.ui true
+git config --global core.editor nvim
+ssh-keygen -t rsa -C yesiddgarzon@gmail.com
+
+# Clone dotfiles
+git clone https://github.com/yesiddgit/dotfiles.git
