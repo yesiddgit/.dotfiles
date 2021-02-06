@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Install packages
+pacman=(
+  adobe-source-code-pro-fonts
+  adobe-source-sans-pro-fonts
+  adobe-source-serif-pro-fonts
+  libreoffice-fresh
+  libreoffice-fresh
+  mplayer
+  neofetch
+  nodejs
+  noto-fonts
+  npm
+  reflector
+  ttf-caladea
+  ttf-carlito
+  ttf-dejavu
+  ttf-liberation
+  ttf-linux-libertine-g
+  ttf-roboto-mono
+  vlc
+  zathura
+  zathura-cb
+  zathura-djvu
+  zathura-pdf-mupdf
+  zathura-pdf-poppler
+  zathura-ps
+)
+
+yay=(
+  consolas-font
+  spotify
+  spotifywm-git
+  ttf-gentium-basic
+)
+
+sudo pacman -S --noconfirm ${pacman[@]}
+yay -S --noconfirm ${yay[@]}

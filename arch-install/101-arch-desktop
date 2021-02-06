@@ -1,0 +1,75 @@
+#!/bin/bash
+
+# Setup YAY
+cd ~/.config
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd $HOME
+
+# Install esential packages
+pacman=(
+  arandr
+  bspwm
+  chromium
+  dmenu
+  gvfs
+  kitty
+  lxsession
+  neovim
+  nitrogen
+  numlockx
+  openssh
+  pamixer
+  pavucontrol
+  picom
+  playerctl
+  pulseaudio
+  pulseaudio-alsa
+  rofi
+  sxhkd
+  ueberzug
+  unrar
+  vifm
+  xf86-input-libinput
+  xf86-video-nouveau
+  xorg-server
+  xorg-xinit
+  xorg-xsetroot
+  xsel
+  zsh
+)
+
+yay=(
+  polybar
+)
+
+sudo pacman -S --noconfirm ${pacman[@]}
+yay -S --noconfirm ${yay[@]}
+
+# Oh-my-zsh
+cd $HOME
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+# Change shell
+chsh -s $(which zsh) yesidd
+
+# Git config
+git config --global user.name yesiddgit
+git config --global user.email yesiddgarzon@gmail.com
+git config --global color.ui true
+git config --global core.editor nvim
+ssh-keygen -t rsa -C yesiddgarzon@gmail.com
+ssh -T git@github.com
+
+# Clone dotfiles
+cd $HOME
+echo ".dotfiles" >> .gitignore
+git clone --bare https://github.com/yesiddgit/.dotfiles.git
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+dotfiles checkout
+mkdir -p .config-backup && \ 
+dotfiles checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
+xargs -I{} mv {} .config-backup/{}
+config dotfiles --local status.showUntrackedFiles no

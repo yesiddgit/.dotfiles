@@ -1,0 +1,72 @@
+#!/bin/bash
+
+# loadkeys es
+# ls /sys/firmware/efi/efivars
+# internet connection and test
+
+# System clock
+timedatectl set-ntp true
+timedatectl status
+
+# Disks
+cgdisk /dev/sda1
+mkfs.fat -F32 /dev/sda1
+mkfs.ext4 /dev/sda2
+mkfs.ext4 /dev/sda3
+mkswap /dev/sda4
+mount /dev/sda2 /mnt
+mkdir /mnt/boot/EFI
+mkdir /mnt/home
+mount /dev/sda1 /mnt/boot/EFI
+mount /dev/sda3 /mnt/home
+
+# Base packages
+pacstrap /mnt base linux linux-firmware
+
+# Fstab
+genfstab -U /mnt >> /mnt/etc/fstab
+
+# Chroot
+arch-chroot /mnt
+
+# Time zone
+ln -sf /usr/share/zoneinfo/America/Bogota /etc/localtime
+hwclock --systohc
+
+# Localization
+echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen
+locale-gen
+echo LANG=en_US.UTF-8 > /etc/locale.conf
+echo KEYMAP=es > /etc/vconsole.conf
+
+# Networking
+echo archlinux > /etc/hostname
+vim /etc/hosts
+#127.0.0.1   localhost
+#::1         localhost
+#127.0.1.1   archlinux.localdomain   archlinux
+
+# Root pass
+passwd
+
+# Bootloader (Grub)
+pacman -S grub efibootmgr os-prober dosfstools mtools ntfs-3g
+grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=Arch
+--recheck
+grub-mkconfig -o /boot/grub/grub.cfg
+
+# Create user and permissions
+useradd -m -G wheel,video,audio,input,power,storage,optical yesidd
+passwd yesidd
+pacman -S base-devel sudo vim
+EDITOR=vim visudo
+
+# Internet and home folders
+pacman -S networkmanager xdg-user-dirs
+systemctl enable NetworkManager
+# nmcli dev wifi connect SSID password pass
+xdg-user-dirs-update
+
+exit
+umount -R /mnt
+reboot
