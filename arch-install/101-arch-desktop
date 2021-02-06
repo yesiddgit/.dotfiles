@@ -9,34 +9,35 @@ cd $HOME
 
 # Install esential packages
 pacman=(
-  xf86-video-nouveau
-  xf86-input-libinput
-  pulseaudio
-  pulseaudio-alsa
-  numlockx
-  pamixer
-  xorg-xinit
-  xorg-server
-  xorg-xsetroot
   arandr
   bspwm
-  sxhkd
-  dmenu
-  rofi
-  nitrogen
-  picom
-  kitty
   chromium
+  dmenu
   gvfs
-  zsh
+  kitty
   lxsession
   neovim
-  playerctl
-  unrar
-  ueberzug
-  xsel
+  nitrogen
+  numlockx
   openssh
+  pamixer
+  pavucontrol
+  picom
+  playerctl
+  pulseaudio
+  pulseaudio-alsa
+  rofi
+  sxhkd
+  ueberzug
+  unrar
   vifm
+  xf86-input-libinput
+  xf86-video-nouveau
+  xorg-server
+  xorg-xinit
+  xorg-xsetroot
+  xsel
+  zsh
 )
 
 yay=(
