@@ -46,7 +46,7 @@ pathadd $HOME/.local/bin
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Plugins
-plugins=(git gitfast zsh-autosuggestions zsh-completions)
+plugins=(git gitfast zsh-completions)
 
 # Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
