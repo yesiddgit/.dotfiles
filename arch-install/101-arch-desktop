@@ -36,6 +36,7 @@ pacman=(
   ueberzug
   xsel
   openssh
+  vifm
 )
 
 yay=(

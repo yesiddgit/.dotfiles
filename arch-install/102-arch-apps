@@ -2,7 +2,6 @@
 
 # Install packages
 pacman=(
-  vifm
   zathura
   zathura-cb
   zathura-djvu
@@ -21,6 +20,7 @@ pacman=(
   adobe-source-code-pro-fonts
   adobe-source-sans-pro-fonts
   adobe-source-serif-pro-fonts
+  npm
 )
 
 yay=(
