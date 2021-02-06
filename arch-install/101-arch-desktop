@@ -66,7 +66,7 @@ ssh -T git@github.com
 # Clone dotfiles
 cd $HOME
 echo ".dotfiles" >> .gitignore
-git clone --bare https://github.com/yesiddgit/dotfiles.git
+git clone --bare https://github.com/yesiddgit/.dotfiles.git
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 dotfiles checkout
 mkdir -p .config-backup && \ 
