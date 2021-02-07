@@ -31,6 +31,7 @@ PATH=/usr/local/bin":$PATH"
 pathadd /opt/local/bin
 pathadd $HOME/bin
 pathadd $HOME/.local/bin
+pathadd $HOME/.config/zsh/
 
 # ------------------------------------------------------------------------------
 # OH My ZSH
