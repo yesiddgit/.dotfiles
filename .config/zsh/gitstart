@@ -4,8 +4,9 @@ user=$(yq e '."github.com".user' "$HOME"/.config/gh/hosts.yml)
 repo=$(basename "$PWD")
 
 git init
+echo "# My $repo Repository" > README.md
 git add .
-git commit -m "Initialize Repository"
+git commit -m "initial commit -setup with script"
 git branch -M main
 gh repo create "$repo"
 git remote add origin git@github.com:"$user"/"$repo".git
