@@ -37,7 +37,7 @@ pathadd $HOME/.config/zsh/
 # OH My ZSH
 # ------------------------------------------------------------------------------
 
-ZSH_THEME="af-magic"
+ZSH_THEME="jbergantine"
 
 # Plugins
 plugins=(git gitfast zsh-completions)
