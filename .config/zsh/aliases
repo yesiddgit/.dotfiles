@@ -92,6 +92,7 @@ alias fonts='fc-cache -f -v'
 alias reset='cd ~; clear; source ~/.zshrc'
 alias fetch='clear && neofetch'
 alias c='clear'
+alias mine='chmod -R a-x,o-w,+X '
 
 # -------------------------------------
 # Git
