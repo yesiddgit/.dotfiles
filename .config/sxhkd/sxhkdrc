@@ -144,7 +144,7 @@ super + alt + 2
 
 # file manager
 super + alt + 3
-  thunar
+  pcmanfm
 
 # lxappearance
 super + alt + 4
