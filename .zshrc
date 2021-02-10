@@ -37,7 +37,7 @@ pathadd $HOME/.config/zsh/
 # OH My ZSH
 # ------------------------------------------------------------------------------
 
-ZSH_THEME="jbergantine"
+ZSH_THEME="sorin"
 
 # Plugins
 plugins=(git gitfast zsh-completions)
@@ -59,6 +59,3 @@ autoload -Uz compinit
 compinit
 setopt COMPLETE_ALIASES
 zstyle ':completion::complete:*' gain-privileges 1
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
