@@ -85,7 +85,7 @@ alias site='cd $HOME/coding/$(date +%Y); mkdir -p '
 alias tests='cd $HOME/coding/tests'
 
 # Apps
-alias vf="./.config/vifm/scripts/vifmrun"
+alias vf="vifmrun"
 
 # utilities
 alias fonts='fc-cache -f -v'
