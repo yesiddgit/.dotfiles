@@ -30,7 +30,6 @@ endif
 mark b ~/bin/
 mark h ~/
 mark w ~/coding/2021
-mark d /run/media/yesidd/Data
 mark c ~/.config/
 
 " Macros
