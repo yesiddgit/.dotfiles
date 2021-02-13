@@ -37,7 +37,7 @@ pathadd $HOME/.config/zsh/
 # OH My ZSH
 # ------------------------------------------------------------------------------
 
-ZSH_THEME="gozilla"
+ZSH_THEME="nanotech"
 
 # Plugins
 plugins=(git gitfast zsh-completions)

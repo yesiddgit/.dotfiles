@@ -27,28 +27,28 @@ alias rm='rm -i'
 # Pacman
 # -------------------------------------
 
-alias paci='sudo pacman -S'             # install
-alias pacs='sudo pacman -Ss'            # search
-alias pacu='sudo pacman -Syu'           # update
-alias pacr='sudo pacman -R'             # remove package
-alias pacrr='sudo pacman -Rs'           # remove package + unused dependencies
-alias pacrc='sudo pacman -Sc'           # remove cache
-alias pacrcc='sudo pacman -Scc'         # empty cache
-alias pacls='sudo pacman -Qe'           # list installed packages
-alias pacru='sudo pacman -Rns $(pacman -Qtdq)'
+alias paci='sudo pacman -S --noconfirm'             # install
+alias pacs='sudo pacman -Ss --noconfirm'            # search
+alias pacu='sudo pacman -Syu --noconfirm'           # update
+alias pacr='sudo pacman -R --noconfirm'             # remove package
+alias pacrr='sudo pacman -Rs --noconfirm'           # remove package + unused dependencies
+alias pacrc='sudo pacman -Sc --noconfirm'           # remove cache
+alias pacrcc='sudo pacman -Scc --noconfirm'         # empty cache
+alias pacls='sudo pacman -Qe --noconfirm'           # list installed packages
+alias pacru='sudo pacman -Rns $(pacman -Qtdq) --noconfirm'
 alias pacum='sudo reflector --latest 10 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
 
 # -------------------------------------
 # Yay
 # -------------------------------------
 
-alias yayi='yay -S'                     # install
-alias yays='yay -Ss'                    # search
-alias yayu='yay -Syu'                   # update
-alias yayr='yay -R'                     # remove package
-alias yayrr='yay -Rs'                   # remove package + unused dependencies
-alias yayrc='yay -Sc'                   # remove cache
-alias yayls='yay -Qe'                   # list installed packages
+alias yayi='yay -S --noconfirm'                     # install
+alias yays='yay -Ss --noconfirm'                    # search
+alias yayu='yay -Syu --noconfirm'                   # update
+alias yayr='yay -R --noconfirm'                     # remove package
+alias yayrr='yay -Rs --noconfirm'                   # remove package + unused dependencies
+alias yayrc='yay -Sc --noconfirm'                   # remove cache
+alias yayls='yay -Qe --noconfirm'                   # list installed packages
 
 # -------------------------------------
 # Neovim
@@ -83,8 +83,6 @@ alias vifmrc='vim ~/.config/vifm/vifmrc'
 alias conf='cd .config'
 alias doc='cd $HOME/Documents'
 alias dow='cd $HOME/Downloads'
-alias work='cd $HOME/workspace'
-
 alias coding='mkdir -p $HOME/coding/$(date +%Y)'
 alias site='cd $HOME/coding/$(date +%Y); mkdir -p '
 alias tests='cd $HOME/coding/tests'
