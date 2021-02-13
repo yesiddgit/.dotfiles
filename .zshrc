@@ -37,7 +37,7 @@ pathadd $HOME/.config/zsh/
 # OH My ZSH
 # ------------------------------------------------------------------------------
 
-ZSH_THEME="sorin"
+ZSH_THEME="gozilla"
 
 # Plugins
 plugins=(git gitfast zsh-completions)
