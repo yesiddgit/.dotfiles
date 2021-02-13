@@ -20,7 +20,7 @@ xset s off
 bspc monitor -d I II III IV V VI VII VIII IX X
 
 # Bspwm config
-bspc config automatic_scheme        longest_side
+bspc config automatic_scheme        alternate
 bspc config border_width            1
 bspc config window_gap              2
 bspc config split_ratio             0.5
@@ -42,3 +42,4 @@ bspc config pointer_action3         resize_corner
 # Applications 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a mplayer2 state=floating
+bspc rule -a virtualbox desktop='^2'

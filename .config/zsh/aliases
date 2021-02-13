@@ -80,6 +80,11 @@ alias vifmrc='vim ~/.config/vifm/vifmrc'
 # -------------------------------------
 
 # Folders
+alias conf='cd .config'
+alias doc='cd $HOME/Documents'
+alias dow='cd $HOME/Downloads'
+alias work='cd $HOME/workspace'
+
 alias coding='mkdir -p $HOME/coding/$(date +%Y)'
 alias site='cd $HOME/coding/$(date +%Y); mkdir -p '
 alias tests='cd $HOME/coding/tests'
@@ -87,7 +92,7 @@ alias tests='cd $HOME/coding/tests'
 # Apps
 alias vf="vifmrun"
 
-# utilities
+# Utilities
 alias fonts='fc-cache -f -v'
 alias reset='cd ~; clear; source ~/.zshrc'
 alias fetch='clear && neofetch'
