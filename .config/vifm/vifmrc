@@ -58,6 +58,23 @@ fileviewer <font/*>
     \ %pc
     \ vifmimg clear
 
+filextype {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
+    \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
+    \*.as[fx]},
+    \<video/*>
+    \ {View with vlc}
+    \ vlc %f
+
+filextype {*.pdf},<application/pdf> zathura %c %i &
+
+filextype {*.html,*.htm},<text/html>
+    \ {Open with vim}
+    \ nvim %f,
+
+filextype {*.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm},<image/*>
+    \ {View in sxiv}
+    \ sxiv %f,
+
 " files extraction
 
 filetype {*.zip,*.jar,*.war,*.ear,*.oxt,*.apkg},
