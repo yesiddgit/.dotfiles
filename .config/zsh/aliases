@@ -84,10 +84,11 @@ alias conf='cd .config'
 alias doc='cd $HOME/Documents'
 alias dow='cd $HOME/Downloads'
 alias dot='cd $HOME/.dotfiles'
-alias test='cd $HOME/coding/tests'
-alias cod='cd $HOME/coding'
-alias coding='mkdir -p $HOME/coding/$(date +%Y)'
-alias new='cd $HOME/coding/$(date +%Y); mkdir -p '
+alias test='cd $HOME/dev/test'
+alias dev='cd $HOME/dev'
+alias train='cd $HOME/dev/train'
+alias newdev='mkdir -p $HOME/dev/$(date +%Y)'
+alias code='cd $HOME/coding/$(date +%Y); mkdir -p '
 
 # Apps
 alias vf="vifmrun"
