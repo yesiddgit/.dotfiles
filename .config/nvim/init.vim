@@ -2,7 +2,7 @@
 " Autoinstall vim-plug
 " =============================================================================
 
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
+if empty(glob('~/.config/nvim/autoload/plug.vim')) 
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall | source $MYVIMRC
@@ -17,6 +17,7 @@ call plug#begin('~/.config/nvim/plugged')
 	" syntax
 	Plug 'sheerun/vim-polyglot'
 	Plug 'yuezk/vim-js'
+  Plug 'othree/html5.vim'
 
 	" typing
 	Plug 'jiangmiao/auto-pairs'
@@ -35,8 +36,11 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'itchyny/lightline.vim'
   Plug 'chriskempson/base16-vim'
   Plug 'mike-hearn/base16-vim-lightline'
-	Plug 'morhetz/gruvbox'
+	Plug 'gruvbox-community/gruvbox'
 	Plug 'shinchu/lightline-gruvbox.vim'
+
+  " git
+  Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
@@ -49,6 +53,7 @@ set fileencoding=utf-8
 set nobackup
 set noswapfile
 set nowritebackup
+syntax on
 
 " =============================================================================
 " Options
@@ -78,11 +83,10 @@ set wrap
 " UI Options
 " =============================================================================
 
-colorscheme base16-default-dark
-"colorscheme gruvbox
-"let g:gruvbox_contrast_dark="hard"
-highlight Normal ctermbg=NONE
-syntax on
+"colorscheme base16-default-dark
+let g:gruvbox_contrast_dark = "hard"
+colorscheme gruvbox
+highlight Normal ctermfg=NONE
 
 " lightline
 let g:lightline = {
@@ -102,7 +106,7 @@ let g:lightline = {
     \   'gitbranch': 'fugitive#head',
     \   'kitestatus': 'kite#statusline'
     \ },
-    \ 'colorscheme': 'base16_default_dark',
+    \ 'colorscheme': 'gruvbox',
     \ 'subseparator': {
     \   'left': '',
     \   'right': ''
@@ -130,11 +134,28 @@ let NERDTreeAutoDeleteBuffer=1
 " =============================================================================
 
 let mapleader="\<Space>"
-nnoremap <leader>x :!node %<cr>
-nnoremap <leader>t :NERDTreeToggle<cr>
-let g:user_emmet_leader_key='<C-M>'
 
+" Save. close and erase doc
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
 nnoremap <leader>wq :wq<cr>
 nnoremap <leader>e :1,$d<cr>
+
+" Fast scrolling
+nnoremap <C-e> 10<C-e>
+nnoremap <C-y> 10<C-y>
+nnoremap J 5j
+nnoremap K 5k
+
+" Move lines up or down
+nnoremap <A-j> :m .+1<cr>
+nnoremap <A-k> :m .-2<cr>
+vnoremap <A-j> :m '>+1'<cr>
+vnoremap <A-k> :m '<-2'<cr>
+
+" NERDTree maps
+nnoremap <leader>x :!node %<cr>
+nnoremap <leader>t :NERDTreeToggle<cr>
+
+" Emmet
+let g:user_emmet_leader_key='<C-M>'

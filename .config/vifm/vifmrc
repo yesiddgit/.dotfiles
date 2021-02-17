@@ -23,7 +23,7 @@ set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
 
 " Markers
 mark h ~/
-mark w ~/coding/2021
+mark d ~/dev/
 mark c ~/.config/
 
 " File types and viewers
