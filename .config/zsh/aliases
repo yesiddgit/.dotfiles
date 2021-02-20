@@ -102,4 +102,7 @@ alias mine='chmod -R a-x,o-w,+X '
 # Git
 # -------------------------------------
 
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dg='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dga='dg add '
+alias dgc='dg commit -m'
+alias dgp='dg push'
