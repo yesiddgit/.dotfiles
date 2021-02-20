@@ -54,10 +54,8 @@ alias yayls='yay -Qe --noconfirm'                   # list installed packages
 # Neovim
 # -------------------------------------
 
-alias vim='nvim'
-alias vi='nvim'
 alias svim='sudoedit'
-alias v='nvim'
+alias vim='nvim'
 
 # -------------------------------------
 # Dotfiles configuration

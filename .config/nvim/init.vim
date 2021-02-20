@@ -13,11 +13,9 @@ endif
 " =============================================================================
 
 call plug#begin('~/.config/nvim/plugged')
-	
 	" syntax
-	Plug 'sheerun/vim-polyglot'
+  Plug 'sheerun/vim-polyglot'
 	Plug 'yuezk/vim-js'
-  Plug 'othree/html5.vim'
 
 	" typing
 	Plug 'jiangmiao/auto-pairs'
@@ -26,21 +24,23 @@ call plug#begin('~/.config/nvim/plugged')
 
 	" ide
 	Plug 'scrooloose/nerdtree'
-  Plug 'scrooloose/nerdcommenter'
+	Plug 'scrooloose/nerdcommenter'
 	Plug 'vifm/vifm.vim'
 	Plug 'christoomey/vim-tmux-navigator'
-  Plug 'yggdroot/indentline'
+	Plug 'yggdroot/indentline'
+	Plug 'ap/vim-css-color'
 
 	" ui
-	Plug 'maximbaz/lightline-ale'
-	Plug 'itchyny/lightline.vim'
-  Plug 'chriskempson/base16-vim'
-  Plug 'mike-hearn/base16-vim-lightline'
 	Plug 'gruvbox-community/gruvbox'
+	Plug 'itchyny/lightline.vim'
 	Plug 'shinchu/lightline-gruvbox.vim'
+	Plug 'chriskempson/base16-vim'
+	Plug 'mike-hearn/base16-vim-lightline'
+	Plug 'arcticicestudio/nord-vim', { 'on': 'NERDTreeToggle' }
 
-  " git
-  Plug 'tpope/vim-fugitive'
+	" git
+	Plug 'tpope/vim-fugitive'
+	Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
@@ -83,35 +83,12 @@ set wrap
 " UI Options
 " =============================================================================
 
-"colorscheme base16-default-dark
-let g:gruvbox_contrast_dark = "hard"
-colorscheme gruvbox
-highlight Normal ctermfg=NONE
+colorscheme nord
 
-" lightline
-let g:lightline = {
-    \ 'active': {
-    \   'left': [['mode', 'paste'], [], ['relativepath', 'modified']],
-    \   'right': [['kitestatus'], ['filetype', 'percent', 'lineinfo'], ['gitbranch']]
-    \ },
-    \ 'inactive': {
-    \   'left': [['inactive'], ['relativepath']],
-    \   'right': [['bufnum']]
-    \ },
-    \ 'component': {
-    \   'bufnum': '%n',
-    \   'inactive': 'inactive'
-    \ },
-    \ 'component_function': {
-    \   'gitbranch': 'fugitive#head',
-    \   'kitestatus': 'kite#statusline'
-    \ },
-    \ 'colorscheme': 'gruvbox',
-    \ 'subseparator': {
-    \   'left': '',
-    \   'right': ''
-    \ }
-    \}
+" airline
+let g:lightline = { 
+			\ 'colorscheme' : 'nord', 
+			\ }
 
 " =============================================================================
 " Plugin Options

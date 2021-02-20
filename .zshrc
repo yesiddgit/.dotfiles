@@ -37,7 +37,7 @@ pathadd $HOME/.config/zsh/
 # OH My ZSH
 # ------------------------------------------------------------------------------
 
-# ZSH_THEME="nanotech"
+ZSH_THEME="edvardm"
 
 # Plugins
 plugins=(git gitfast zsh-completions)
@@ -60,14 +60,3 @@ compinit
 setopt COMPLETE_ALIASES
 zstyle ':completion::complete:*' gain-privileges 1
 
-# ------------------------------------------------------------------------------
-# Prompt
-# ------------------------------------------------------------------------------
-
-PROMPT='%B%F{green}%2c %f%b$(git_prompt_info)%B%f$%b '
-RPROMPT='%F{blue}%D{%L:%M} %F{green}%D{%p}%f'
-
-ZSH_THEME_GIT_PROMPT_PREFIX="(%B%F{blue}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%f)"
-ZSH_THEME_GIT_PROMPT_DIRTY=" %F{yellow}*%f"
-ZSH_THEME_GIT_PROMPT_CLEAN="%f%b"
