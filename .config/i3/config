@@ -213,5 +213,6 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 bindsym $mod+Mod1+1 exec chromium
 bindsym $mod+Mod1+2 exec spotify
 bindsym $mod+Mod1+3 exec nitrogen
+bindsym $mod+Mod1+4 exec $myTerm -e vifm
 bindsym $mod+Mod1+0 exec $myTerm -e layout_manager
 

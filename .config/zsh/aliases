@@ -89,7 +89,8 @@ alias newdev='mkdir -p $HOME/dev/$(date +%Y)'
 alias code='cd $HOME/coding/$(date +%Y); mkdir -p '
 
 # Apps
-alias vf="vifmrun"
+alias vf='vifmrun'
+alias vifm='vifmrun'
 
 # Utilities
 alias fonts='fc-cache -f -v'
