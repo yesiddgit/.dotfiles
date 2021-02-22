@@ -72,6 +72,8 @@ alias vimrc='vim ~/.config/nvim/init.vim'
 alias picomrc='vim ~/.config/picom/picom.conf'
 alias polybarrc='vim ~/.config/polybar/config'
 alias vifmrc='vim ~/.config/vifm/vifmrc'
+alias i3rc='vim ~/.config/i3/config'
+alias i3barrc='vim ~/.config/i3/i3status.conf'
 
 # -------------------------------------
 # Personal
