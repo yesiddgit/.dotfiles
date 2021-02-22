@@ -216,3 +216,4 @@ bindsym $mod+Mod1+3 exec nitrogen
 bindsym $mod+Mod1+4 exec $myTerm -e vifm
 bindsym $mod+Mod1+0 exec $myTerm -e layout_manager
 
+# vim:filetype=i3
