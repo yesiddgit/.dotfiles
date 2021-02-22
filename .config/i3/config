@@ -1,0 +1,217 @@
+# Default modkey
+set $mod Mod4
+
+# Hide titlebar
+new_window pixel
+
+# i3-gaps
+gaps inner 5
+gaps outer 5
+smart_gaps on
+smart_borders on
+
+# Font for window titles
+font pango:Iosevka Bold 9
+
+# Enable nm-applet
+# exec --no-startup-id nm-applet
+
+# Startup programs
+exec_always setxkbmap es
+exec_always numlockx
+exec_always xrandr --output HDMI-1 --mode 2560x1080
+exec_always feh --bg-fill /home/yesidd/Wallpapers/problems.jpg
+exec_always picom -f
+exec_always nitrogen --restore
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+set $myTerm kitty
+bindsym $mod+Return exec $myTerm
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Start dmenu (a program launcher)
+bindsym $mod+d exec --no-startup-id dmenu_run
+
+# Start rofi
+bindsym $mod+semicolon exec rofi -show drun
+
+# Change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# Alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# Alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Split in horizontal orientation (super + alt + h)
+bindsym $mod+Mod1+h split h
+
+# Split in vertical orientation (super + alt + v)
+bindsym $mod+Mod1+v split v
+
+# Enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# Change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# Toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# Change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# Focus the parent container
+bindsym $mod+a focus parent
+
+# Define workspaces names
+set $ws1 1:
+set $ws2 2:
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+set $ws10 10
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# Assign programs to workspaces
+for_window [class="figma-linux"] move to workspace $ws2
+for_window [class="Spotify"] move to workspace $ws3
+for_window [class="VirtualBox Manager"] move to workspace $ws4
+
+# Floating windows
+for_window [class="Arandr"] floating enable
+for_window [class="VirtualBox Manager"] floating enable set 640 480
+for_window [class="VirtualBox Machine"] floating enable
+for_window [class="Nitrogen"] floating enable resize set 640 480
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# Exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# Lock screen
+bindsym $mod+x exec i3lock
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Class                     border  bg      text    ind     c_border
+client.focused              #bf616a #bf616a #d8dee8 #bf616a #bf616a
+client.focused_inactive     #2f343f #2f343f #d8dee8 #2f343f #2f343f
+client.unfocused            #2f343f #2f343f #d8dee8 #2f343f #2f343f
+client.urgent               #2f343f #2f343f #d8dee8 #2f343f #2f343f
+client.placeholder          #2f343f #2f343f #d8dee8 #2f343f #2f343f
+client.background           #2f343f
+
+# Start i3bar to display a workspace bar
+bar {
+        status_command i3status -c /home/yesidd/.config/i3/i3status.conf
+        position top
+        font pango: Iosevka 8
+        colors {
+                background #282A36
+                statusline #F8F8F2
+                separator  #44475A
+
+                focused_workspace  #44475A #44475A #F8F8F2
+                active_workspace   #282A36 #44475A #F8F8F2
+                inactive_workspace #282A36 #282A36 #BFBFBF
+                urgent_workspace   #FF5555 #FF5555 #F8F8F2
+                binding_mode       #FF5555 #FF5555 #F8F8F2
+        }
+}
+
+# Sound Settings
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+
+# Apps keybindings
+bindsym $mod+Mod1+1 exec chromium
+bindsym $mod+Mod1+2 exec spotify
+bindsym $mod+Mod1+3 exec nitrogen
+bindsym $mod+Mod1+0 exec $myTerm -e layout_manager
+

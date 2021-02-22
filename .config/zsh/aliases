@@ -10,7 +10,7 @@ alias suspend='pm-suspend'
 # ls
 # -------------------------------------
 
-alias ls='ls --color=auto --group-directories-first'
+alias ls='ls -va --color=auto --group-directories-first'
 alias lsl='ls -l'
 alias ll='ls -lah'
 alias la='ls -A'
