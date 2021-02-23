@@ -7,9 +7,6 @@ new_window pixel
 # Font for window titles
 font pango:Roboto Mono Medium 9
 
-# Enable nm-applet
-exec --no-startup-id nm-applet
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -76,8 +73,8 @@ bindsym $mod+a focus parent
 # Define workspaces names
 set $ws1 
 set $ws2 
-set $ws3 
-set $ws4 
+set $ws3 
+set $ws4 
 set $ws5 
 set $ws6 6
 set $ws7 7
@@ -98,16 +95,16 @@ bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
 
 # Assign programs to workspaces
 assign [class="figma-linux"]        $ws3
@@ -116,10 +113,10 @@ assign [class="Spotify"]            $ws4
 assign [class="VirtualBox Manager"] $ws5
 
 # Floating windows
-for_window [class="Arandr"] floating enable
-for_window [class="VirtualBox Manager"] floating enable set 640 480
-for_window [class="VirtualBox Machine"] floating enable
-for_window [class="Lxappearance"] floating enable resize set 640 480
+for_window [class="Arandr"]                 floating enable
+for_window [class="VirtualBox Manager"]     floating enable set 640 480
+for_window [class="VirtualBox Machine"]     floating enable
+for_window [class="Lxappearance"]           floating enable resize set 640 480
 
 # Apps keybindings
 bindsym $mod+Mod1+1 exec chromium
@@ -179,13 +176,10 @@ client.background       #212121
 # Start i3bar to display a workspace bar
 bar {
     status_command          i3blocks -c /home/yesidd/.config/i3/i3blocks.conf
-    bindsym button4         nop
-    bindsym button5         nop
     position                top
+    i3bar_command           i3bar
     tray_output             primary
-    separator_symbol        "·"
-    workspace_buttons       yes
-    strip_workspace_numbers yes
+    separator_symbol        "/"
 
     colors {
         background  #212121
@@ -217,12 +211,15 @@ smart_gaps on
 smart_borders on
 
 # Startup programs
-exec_always setxkbmap es
-exec_always /usr/bin/lxpolkit
-exec_always numlockx
-exec_always xrandr --output HDMI-1 --mode 2560x1080
-exec_always feh --bg-fill /home/yesidd/Wallpapers/problems.jpg
-exec_always picom -f
+exec_always --no-startup-id nm-applet
+exec_always --no-startup-id setxkbmap es
+exec_always --no-startup-id /usr/bin/lxpolkit
+exec_always --no-startup-id numlockx
+exec_always --no-startup-id xrandr --output HDMI-1 --mode 2560x1080
+exec_always --no-startup-id feh --bg-fill /home/yesidd/Wallpapers/problems.jpg
+exec_always --no-startup-id picom -f
+exec_always --no-startup-id xsetroot -cursor_name left_ptr
+exec_always --no-startup-id pulseaudio -D
 
 # i3blocks
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
