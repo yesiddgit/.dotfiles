@@ -219,7 +219,7 @@ exec_always --no-startup-id xrandr --output HDMI-1 --mode 2560x1080
 exec_always --no-startup-id feh --bg-fill /home/yesidd/Wallpapers/problems.jpg
 exec_always --no-startup-id picom -f
 exec_always --no-startup-id xsetroot -cursor_name left_ptr
-exec_always --no-startup-id pulseaudio -D
+exec_always --no-startup-id pulseaudio --start
 
 # i3blocks
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
