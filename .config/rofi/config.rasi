@@ -1,9 +1,8 @@
-
 configuration {
   display-run:                  " ";
   display-drun:                 "  ";
   display-window:               "  ";
-  font:                         "Iosevka 14";
+  font:                         "Roboto Mono Medium 12";
   modi:                         "window,run,drun";
   hide-scrollbar:               true;
   lines:                        5;
