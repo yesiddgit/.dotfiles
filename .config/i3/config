@@ -4,26 +4,11 @@ set $mod Mod4
 # Hide titlebar
 new_window pixel
 
-# i3-gaps
-gaps inner 4
-gaps outer -2
-smart_gaps on
-smart_borders on
-
 # Font for window titles
-font pango:Iosevka Bold 9
+font pango:Roboto Mono Medium 9
 
 # Enable nm-applet
-# exec --no-startup-id nm-applet
-
-# Startup programs
-exec_always setxkbmap es
-exec_always /usr/bin/lxpolkit
-exec_always numlockx
-exec_always xrandr --output HDMI-1 --mode 2560x1080
-exec_always feh --bg-fill /home/yesidd/Wallpapers/problems.jpg
-exec_always picom -f
-exec_always nitrogen --restore
+exec --no-startup-id nm-applet
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -89,11 +74,11 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # Define workspaces names
-set $ws1 1:
-set $ws2 2:
-set $ws3 3:
-set $ws4 4
-set $ws5 5
+set $ws1 
+set $ws2 
+set $ws3 
+set $ws4 
+set $ws5 
 set $ws6 6
 set $ws7 7
 set $ws8 8
@@ -101,16 +86,16 @@ set $ws9 9
 set $ws10 10
 
 # switch to workspace
-bindsym $mod+1 workspace number $ws1
-bindsym $mod+2 workspace number $ws2
-bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -125,9 +110,9 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # Assign programs to workspaces
-for_window [class="figma-linux"] move to workspace $ws2
-for_window [class="Spotify"] move to workspace $ws3
-for_window [class="VirtualBox Manager"] move to workspace $ws4
+assign [class="figma-linux"] move to workspace $ws3
+assign [class="Spotify"] move to workspace $ws4
+assign [class="VirtualBox Manager"] move to workspace $ws5
 
 # Floating windows
 for_window [class="Arandr"] floating enable
@@ -176,29 +161,35 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Class                     border  bg      text    ind     c_border
-client.focused              #bf616a #bf616a #d8dee8 #bf616a #bf616a
-client.focused_inactive     #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.unfocused            #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.urgent               #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.placeholder          #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.background           #2f343f
+client.focused          #2b83a6 #2b83a6 #ffffff #dddddd   #2b83a6
+client.focused_inactive #212121 #212121 #86888c #292d2e   #5a5a5a
+client.unfocused        #212121 #212121 #86888c #292d2e   #5a5a5a
+client.urgent           #d64e4e #d64e4e #ffffff #d64e4e   #d64e4e
+client.placeholder      #212121 #0c0c0c #ffffff #212121   #262626
+client.background       #212121
 
 # Start i3bar to display a workspace bar
 bar {
-        status_command i3status -c /home/yesidd/.config/i3/i3status.conf
-        position top
-        font pango: Iosevka Bold 9
-        colors {
-                background #282A36
-                statusline #F8F8F2
-                separator  #44475A
+    status_command          i3blocks -c /home/yesidd/.config/i3/i3blocks.conf
+    bindsym button4         nop
+    bindsym button5         nop
+    position                top
+    tray_output             primary
+    separator_symbol        "·"
+    workspace_buttons       yes
+    strip_workspace_numbers yes
 
-                focused_workspace  #44475A #44475A #F8F8F2
-                active_workspace   #282A36 #44475A #F8F8F2
-                inactive_workspace #282A36 #282A36 #BFBFBF
-                urgent_workspace   #FF5555 #FF5555 #F8F8F2
-                binding_mode       #FF5555 #FF5555 #F8F8F2
-        }
+    colors {
+        background  #212121
+        statusline  #dddddd
+        separator   #666666
+        # class             border  backgr. text
+        focused_workspace   #2b83a6 #2b83a6 #ffffff
+        active_workspace    #212121 #212121 #ffffff
+        inactive_workspace  #212121 #212121 #86888c
+        urgent_workspace    #d64e4e #d64e4e #ffffff
+        binding_mode        #229c56 #229c56 #ffffff
+    }
 }
 
 # Sound Settings
@@ -218,3 +209,20 @@ bindsym $mod+Mod1+3 exec nitrogen
 bindsym $mod+Mod1+4 exec $myTerm -e vifm
 bindsym $mod+Mod1+0 exec ~/.config/i3/layout_manager.sh
 
+# i3-gaps
+gaps inner 4
+gaps outer -2
+smart_gaps on
+smart_borders on
+
+# Startup programs
+exec_always setxkbmap es
+exec_always /usr/bin/lxpolkit
+exec_always numlockx
+exec_always xrandr --output HDMI-1 --mode 2560x1080
+exec_always feh --bg-fill /home/yesidd/Wallpapers/problems.jpg
+exec_always picom -f
+
+# i3blocks
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
