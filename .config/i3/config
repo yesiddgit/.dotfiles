@@ -110,16 +110,24 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # Assign programs to workspaces
-assign [class="figma-linux"] move to workspace $ws3
-assign [class="Spotify"] move to workspace $ws4
-assign [class="VirtualBox Manager"] move to workspace $ws5
+assign [class="figma-linux"]        $ws3
+assign [class="Gimp"]               $ws3
+assign [class="Spotify"]            $ws4
+assign [class="VirtualBox Manager"] $ws5
 
 # Floating windows
 for_window [class="Arandr"] floating enable
 for_window [class="VirtualBox Manager"] floating enable set 640 480
 for_window [class="VirtualBox Machine"] floating enable
-for_window [class="Nitrogen"] floating enable resize set 640 480
 for_window [class="Lxappearance"] floating enable resize set 640 480
+
+# Apps keybindings
+bindsym $mod+Mod1+1 exec chromium
+bindsym $mod+Mod1+2 exec spotify
+bindsym $mod+Mod1+3 exec $myTerm -e vifm
+bindsym $mod+Mod1+4 exec figma-linux
+bindsym $mod+Mod1+9 exec pcmanfm
+bindsym $mod+Mod1+0 exec ~/.config/i3/layout_manager.sh
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
@@ -201,13 +209,6 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
-
-# Apps keybindings
-bindsym $mod+Mod1+1 exec chromium
-bindsym $mod+Mod1+2 exec spotify
-bindsym $mod+Mod1+3 exec nitrogen
-bindsym $mod+Mod1+4 exec $myTerm -e vifm
-bindsym $mod+Mod1+0 exec ~/.config/i3/layout_manager.sh
 
 # i3-gaps
 gaps inner 4

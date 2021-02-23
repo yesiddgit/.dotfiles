@@ -1,4 +1,3 @@
-# -------------------------------------
 # System
 # -------------------------------------
 
@@ -6,7 +5,6 @@ alias shutdown='shutdown now'
 alias restart='reboot'
 alias suspend='pm-suspend'
 
-# -------------------------------------
 # ls
 # -------------------------------------
 
@@ -15,7 +13,6 @@ alias lsl='ls -l'
 alias ll='ls -lah'
 alias la='ls -A'
 
-# -------------------------------------
 # File Management
 # -------------------------------------
 
@@ -23,7 +20,6 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -i'
 
-# -------------------------------------
 # Pacman
 # -------------------------------------
 
@@ -38,7 +34,6 @@ alias pacls='sudo pacman -Qe --noconfirm'           # list installed packages
 alias pacru='sudo pacman -Rns $(pacman -Qtdq) --noconfirm'
 alias pacum='sudo reflector --latest 10 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
 
-# -------------------------------------
 # Yay
 # -------------------------------------
 
@@ -50,14 +45,12 @@ alias yayrr='yay -Rs --noconfirm'                   # remove package + unused de
 alias yayrc='yay -Sc --noconfirm'                   # remove cache
 alias yayls='yay -Qe --noconfirm'                   # list installed packages
 
-# -------------------------------------
 # Neovim
 # -------------------------------------
 
 alias svim='sudoedit'
 alias vim='nvim'
 
-# -------------------------------------
 # Dotfiles configuration
 # -------------------------------------
 
@@ -74,8 +67,8 @@ alias polybarrc='vim ~/.config/polybar/config'
 alias vifmrc='vim ~/.config/vifm/vifmrc'
 alias i3rc='vim ~/.config/i3/config'
 alias i3barrc='vim ~/.config/i3/i3status.conf'
+alias i3blocksrc='vim ~/.config/i3/i3blocks.conf'
 
-# -------------------------------------
 # Personal
 # -------------------------------------
 
@@ -101,10 +94,12 @@ alias fetch='clear && neofetch'
 alias c='clear'
 alias mine='chmod -R a-x,o-w,+X '
 
-# -------------------------------------
 # Git
 # -------------------------------------
 
+alias gc='git commit -m'
+
+# Dotfiles git
 alias dg='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dga='dg add '
 alias dgc='dg commit -m'
