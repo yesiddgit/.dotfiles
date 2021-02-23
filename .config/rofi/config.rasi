@@ -1,15 +1,11 @@
+
 configuration {
   display-run:                  " ";
   display-drun:                 "  ";
   display-window:               "  ";
-  drun-display-format:          "{name}";
   font:                         "Iosevka 14";
   modi:                         "window,run,drun";
-  show-icons:                   false;
   hide-scrollbar:               true;
-  fixed-num-lines:              false;
-  fixed-height:                 false;
-  dynamic:                      true;
   lines:                        5;
   location:                     2;
   yoffset:                      100;
@@ -40,3 +36,4 @@ element selected {
 entry {
   color: #f5f5f5;
 }
+

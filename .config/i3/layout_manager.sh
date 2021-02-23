@@ -145,7 +145,7 @@ if [[ "$ACTION" = "LOAD LAYOUT" ]]; then
     echo "Unloading window '$window'" >> "$LOG_FILE"
 
     if [ $HAS_PID -eq 0 ]; then
-      echo "Window '$window' doesnot have a process" >> "$LOG_FILE"
+      echo "Window '$window' does not have a process" >> "$LOG_FILE"
     else
       xdotool windowunmap "$window" >> "$LOG_FILE" 2>&1
       echo "'xdotool windounmap $window' returned $?" >> "$LOG_FILE"
@@ -348,7 +348,7 @@ MATCH ANY" | rofi -i -dmenu -p "How to identify windows? (xprop style)")
   # the information about the split type
   cat $ALL_WS_FILE | cat - $LAYOUT_FILE > /tmp/tmp.txt && mv /tmp/tmp.txt $LAYOUT_FILE
   # add closing bracked at the end
-  $VIM_BIN $HEADLESS -nEs -c 'normal Go]}' -c "wqa" -- "$LAYOUT_FILE"
+  $VIM_BIN $HEADLESS -nEs -c 'normal Go]}' -c "wqa" -- "$LAYOUT_FILE"
 
   # now we have to do some postprocessing on it, all is even advices on the official website
   # https://i3wm.org/docs/layout-saving.html
@@ -401,25 +401,25 @@ MATCH ANY" | rofi -i -dmenu -p "How to identify windows? (xprop style)")
   $VIM_BIN $HEADLESS -nEs -c '%g/\/\//norm dd' -c "wqa" -- "$LAYOUT_FILE"
 
   # add a missing comma to the last element of array we just deleted
-  $VIM_BIN $HEADLESS -nEs -c '%g/swallows/norm j^%k:s/,$//g' -c "wqa" -- "$LAYOUT_FILE"
+  $VIM_BIN $HEADLESS -nEs -c '%g/swallows/norm j^%k:s/,$//g' -c "wqa" -- "$LAYOUT_FILE"
 
   # delete all empty lines
   $VIM_BIN $HEADLESS -nEs -c '%g/^$/norm dd' -c "wqa" -- "$LAYOUT_FILE"
 
   # pick up floating containers and move them out of the root container
   if [ -n "$GOT_VIM" ]; then
-    $VIM_BIN $HEADLESS -nEs -c '%g/floating_con/norm [{d%GAp' -c "wqa" -- "$LAYOUT_FILE"
+    $VIM_BIN $HEADLESS -nEs -c '%g/floating_con/norm [{d%GAp' -c "wqa" -- "$LAYOUT_FILE"
   else
     # nvim has a bug currently:
     # when scripting d% to delete to the next in pair, it actually leaves one of the pair characters there
-    $VIM_BIN $HEADLESS -nEs -c "%g/floating_con/norm [{%ma%d'aGAp" -c "wqa" -- "$LAYOUT_FILE"
+    $VIM_BIN $HEADLESS -nEs -c "%g/floating_con/norm [{%ma%d'aGAp" -c "wqa" -- "$LAYOUT_FILE"
   fi
 
   # delete all empty lines
   $VIM_BIN $HEADLESS -nEs -c '%g/^$/norm dd' -c "wqa" -- "$LAYOUT_FILE"
 
   # add missing commas between the newly created inner parts of the root element
-  $VIM_BIN $HEADLESS -nEs -c '%s/}\n{/},{/g' -c "wqa" -- "$LAYOUT_FILE"
+  $VIM_BIN $HEADLESS -nEs -c '%s/}\n{/},{/g' -c "wqa" -- "$LAYOUT_FILE"
 
   # surroun everythin in []
   $VIM_BIN $HEADLESS -nEs -c 'normal ggO[Go]' -c "wqa" -- "$LAYOUT_FILE"
@@ -443,4 +443,4 @@ if [[ "$ACTION" = "DELETE LAYOUT" ]]; then
   exec "$0" "$@"
 fi
 
-# #} 
+# #}
