@@ -1,0 +1,53 @@
+[
+	{
+		"border": "pixel",
+		"floating": "auto_off",
+		"fullscreen_mode": 0,
+		"layout": "splith",
+		"marks": [],
+		"percent": null,
+		"type": "con",
+		"nodes": [
+			{
+				"border": "pixel",
+				"current_border_width": 2,
+				"floating": "auto_off",
+				"geometry": {
+					"height": 1059,
+					"width": 2560,
+					"x": 0,
+					"y": 21
+				},
+				"marks": [],
+				"name": ".i3/config · master · Derek Taylor / Dotfiles · GitLab - Chromium",
+				"percent": 0.7,
+				"swallows": [
+					{
+						"instance": "^chromium$"
+					}
+				],
+				"type": "con"
+			},
+			{
+				"border": "pixel",
+				"current_border_width": 2,
+				"floating": "auto_off",
+				"geometry": {
+					"height": 1051,
+					"width": 1272,
+					"x": 0,
+					"y": 0
+				},
+				"marks": [],
+				"name": "yesidd@archlinux:~",
+				"percent": 0.3,
+				"swallows": [
+					{
+						"instance": "^kitty$"
+					}
+				],
+				"type": "con"
+			}
+		]
+	}
+]
