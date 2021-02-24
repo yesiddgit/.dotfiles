@@ -82,6 +82,7 @@ alias dev='cd $HOME/dev'
 alias train='cd $HOME/dev/train'
 alias newdev='mkdir -p $HOME/dev/$(date +%Y)'
 alias code='cd $HOME/coding/$(date +%Y); mkdir -p '
+alias repo='dev/repos'
 
 # Apps
 alias vf='vifmrun'

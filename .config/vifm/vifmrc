@@ -25,6 +25,7 @@ set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
 mark h ~/
 mark d ~/dev/
 mark c ~/.config/
+mark w /run/media/yesidd/Data/
 
 " File types and viewers
 fileviewer *.pdf

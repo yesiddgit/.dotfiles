@@ -83,11 +83,11 @@ set wrap
 " UI Options
 " =============================================================================
 
-colorscheme nord
+colorscheme base16-black-metal-khold
 
 " airline
 let g:lightline = { 
-			\ 'colorscheme' : 'nord', 
+			\ 'colorscheme' : 'base16_black_metal', 
 			\ }
 
 " =============================================================================
