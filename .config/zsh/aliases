@@ -79,9 +79,7 @@ alias dow='cd $HOME/Downloads'
 alias dot='cd $HOME/.dotfiles'
 alias test='cd $HOME/dev/test'
 alias dev='cd $HOME/dev'
-alias train='cd $HOME/dev/train'
-alias newdev='mkdir -p $HOME/dev/$(date +%Y)'
-alias code='cd $HOME/coding/$(date +%Y); mkdir -p '
+alias new='mkdir -p '
 alias repo='dev/repos'
 
 # Apps

@@ -14,8 +14,9 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 	" syntax
-  Plug 'sheerun/vim-polyglot'
-	Plug 'yuezk/vim-js'
+  "Plug 'sheerun/vim-polyglot'
+ " Plug 'yuezk/vim-js'
+	"Plug 'cakebaker/scss-syntax.vim'
 
 	" typing
 	Plug 'jiangmiao/auto-pairs'
@@ -87,7 +88,7 @@ colorscheme base16-black-metal-khold
 
 " airline
 let g:lightline = { 
-			\ 'colorscheme' : 'base16_black_metal', 
+			\ 'colorscheme' : 'base16_default_dark', 
 			\ }
 
 " =============================================================================
