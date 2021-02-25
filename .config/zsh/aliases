@@ -8,10 +8,9 @@ alias suspend='pm-suspend'
 # ls
 # -------------------------------------
 
-alias ls='ls -va --color=auto --group-directories-first'
-alias lsl='ls -l'
-alias ll='ls -lah'
-alias la='ls -A'
+alias ls='ls --color=auto --group-directories-first'
+alias ll='ls -l'
+alias la='ls -lavh'
 
 # File Management
 # -------------------------------------
@@ -54,33 +53,28 @@ alias vim='nvim'
 # Dotfiles configuration
 # -------------------------------------
 
-alias xinitrc='vim ~/.xinitrc'
 alias zshrc='vim ~/.zshrc'
 alias aliasesrc='vim ~/.config/zsh/aliases'
 alias kittyrc='vim ~/.config/kitty/kitty.conf'
 alias alacrittyrc='vim ~/.config/alacritty/alacritty.yml'
+alias i3rc='vim ~/.config/i3/config'
 alias bspwmrc='vim ~/.config/bspwm/bspwmrc'
 alias sxhkdrc='vim ~/.config/sxhkd/sxhkdrc'
 alias vimrc='vim ~/.config/nvim/init.vim'
 alias picomrc='vim ~/.config/picom/picom.conf'
-alias polybarrc='vim ~/.config/polybar/config'
-alias vifmrc='vim ~/.config/vifm/vifmrc'
-alias i3rc='vim ~/.config/i3/config'
-alias i3barrc='vim ~/.config/i3/i3status.conf'
-alias i3blocksrc='vim ~/.config/i3/i3blocks.conf'
 
 # Personal
 # -------------------------------------
 
 # Folders
-alias conf='cd .config'
+alias config='cd .config'
 alias doc='cd $HOME/Documents'
 alias dow='cd $HOME/Downloads'
 alias dot='cd $HOME/.dotfiles'
 alias test='cd $HOME/dev/test'
 alias dev='cd $HOME/dev'
-alias new='mkdir -p '
 alias repo='dev/repos'
+alias newFolder='mkdir -p '
 
 # Apps
 alias vf='vifmrun'
@@ -92,6 +86,7 @@ alias reset='cd ~; clear; source ~/.zshrc'
 alias fetch='clear && neofetch'
 alias c='clear'
 alias mine='chmod -R a-x,o-w,+X '
+alias minex='chmod +x '
 
 # Git
 # -------------------------------------
@@ -99,7 +94,7 @@ alias mine='chmod -R a-x,o-w,+X '
 alias gc='git commit -m'
 
 # Dotfiles git
-alias dg='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias dga='dg add '
-alias dgc='dg commit -m'
-alias dgp='dg push'
+alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dota='dg add '
+alias dotc='dg commit -m'
+alias dotp='dg push'
