@@ -95,6 +95,6 @@ alias gc='git commit -m'
 
 # Dotfiles git
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias dota='dg add '
-alias dotc='dg commit -m'
-alias dotp='dg push'
+alias dota='dot add '
+alias dotc='dot commit -m'
+alias dotp='dot push'
