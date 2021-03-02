@@ -1,0 +1,53 @@
+color=#f3f4f5
+separator_block_width=15
+markup=none
+
+[keyindicator]
+command=~/.config/i3/i3blocks/blocklets/keyindicator/keyindicator
+#Allowed keys are CAPS and NUM
+KEY=CAPS
+markup=pango
+interval=once
+signal=11
+TEXT_ON= A 
+COLOR_ON=#ECEFF4
+BG_COLOR_ON=#BF616A
+separator=false
+
+[keyindicator]
+command=~/.config/i3/i3blocks/blocklets/keyindicator/keyindicator
+#Allowed keys are CAPS and NUM
+KEY=NUM
+markup=pango
+interval=once
+signal=11
+TEXT_ON= 1 
+COLOR_ON=#ECEFF4
+BG_COLOR_ON=#5E81AC
+HIDE_WHEN_OFF=1
+
+[kbdd_layout]
+command=~/.config/i3/i3blocks/blocklets/kbdd_layout/kbdd_layout
+interval=persist
+
+#[volume-pulseaudio]
+#command=~/.config/i3/blocklets/volume-pulseaudio/volume-pulseaudio
+#interval=1
+#signal=1
+#LONG_FORMAT="${SYMB}${VOL}%"
+#SHORT_FORMAT="${SYMB}"
+#DEFAULT_COLOR="#f3f4f5"
+#MUTED_COLOR="#d64e4e"
+#USE_ALSA_NAME=1
+
+[time]
+command=~/.config/i3/i3blocks/blocklets/time/time
+interval=1
+STRFTIME_FORMAT=%a, %e %b %I:%M %p
+TZONES=$DEFAULT_TZ,US/Eastern
+TZ_LABELS=,NY
+
+[shutdown_menu]
+full_text=
+command=~/.config/i3/i3blocks/blocklets/shutdown_menu/shutdown_menu
+LAUNCHER=rofi
