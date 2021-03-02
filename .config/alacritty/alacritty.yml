@@ -1,11 +1,13 @@
-# Term Colors
+# Term variable
+#env:
+#TERM: screen-256color
 
 # Window style
 window:
   padding:
-    x: 8
-    y: 8
-  
+    x: 0
+    y: 0
+
   title: Alacritty
   class:
     instance: Alacritty
@@ -21,35 +23,32 @@ font:
   normal:
     family: Consolas
     style: Medium
-
-# Color Scheme
-# Colors (Gruvbox dark)
 colors:
-  # Default colors
+  name: 3024 (light)
+  author: Chris Kempson
   primary:
-    # hard contrast: background = '#1d2021'
-    background: '#181818'
-    # soft contrast: background = '#32302f'
-    foreground: '#d8d8d8'
-
-  # Normal colors
+    background: "#f7f7f7"
+    foreground: "#4a4543"
+  cursor:
+    text: "#f7f7f7"
+    cursor: "#4a4543"
   normal:
-    black:   '#181818'
-    red:     '#ab4642'
-    green:   '#a1b56c'
-    yellow:  '#f7ca88'
-    blue:    '#7cafc2'
-    magenta: '#ba8baf'
-    cyan:    '#86c1b9'
-    white:   '#d8d8d8'
-
-  # Bright colors
+    black: "#090300"
+    red: "#db2d20"
+    green: "#01a252"
+    yellow: "#fded02"
+    blue: "#01a0e4"
+    magenta: "#a16a94"
+    cyan: "#b5e4f4"
+    white: "#a5a2a2"
   bright:
-    black:   '#585858'
-    red:     '#dc9656'
-    green:   '#282828'
-    yellow:  '#383838'
-    blue:    '#b8b8b8'
-    magenta: '#e8e8e8'
-    cyan:    '#a16946'
-    white:   '#f8f8f8'
+    black: "#5c5855"
+    red: "#db2d20"
+    green: "#01a252"
+    yellow: "#fded02"
+    blue: "#01a0e4"
+    magenta: "#a16a94"
+    cyan: "#b5e4f4"
+    white: "#f7f7f7"
+
+# Theme

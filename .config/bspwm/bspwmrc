@@ -11,11 +11,6 @@ xsetroot -cursor_name left_ptr &
 setxkbmap es &
 numlockx &
  
-# disable screensaver                                                                                                                   
-xset -dpms
-xset s noblank
-xset s off
-
 # Monitor
 bspc monitor -d I II III IV V VI VII VIII IX X
 

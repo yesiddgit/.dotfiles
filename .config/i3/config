@@ -107,6 +107,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # Assign programs to workspaces
+for_window [class="discord"]                move container to workspace $ws2
 for_window [class="figma-linux"]            move container to workspace $ws3
 for_window [class="Gimp"]                   move container to workspace $ws3
 for_window [class="^Spotify*"]              move container to workspace $ws4
@@ -124,11 +125,12 @@ for_window [class="Sxiv"]                   floating enable
 
 # Apps keybindings
 bindsym $mod+Mod1+1 exec chromium
-bindsym $mod+Mod1+2 exec spotify
-bindsym $mod+Mod1+3 exec $myTerm -e vifm
-bindsym $mod+Mod1+4 exec figma-linux
+bindsym $mod+Mod1+2 exec subl
+bindsym $mod+Mod1+3 exec figma-linux
+bindsym $mod+Mod1+4 exec spotify
+bindsym $mod+Mod1+8 exec $myTerm -e vifm
 bindsym $mod+Mod1+9 exec pcmanfm
-bindsym $mod+Mod1+0 exec ~/.config/i3/layout_manager.sh
+bindsym $mod+Mod1+0 exec ~/.local/bin/layout_manager
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
@@ -179,7 +181,7 @@ client.background       #212121
 
 # Start i3bar to display a workspace bar
 bar {
-    status_command          i3blocks -c ~/.config/i3/i3blocks.conf
+    status_command          i3blocks -c ~/.config/i3/i3blocks/config
     position                top
     #i3bar_command           i3bar
     tray_output             primary

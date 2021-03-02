@@ -14,12 +14,11 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 	" syntax
-  "Plug 'sheerun/vim-polyglot'
- " Plug 'yuezk/vim-js'
-	"Plug 'cakebaker/scss-syntax.vim'
+  Plug 'sheerun/vim-polyglot'
 
 	" typing
 	Plug 'jiangmiao/auto-pairs'
+	Plug 'tpope/vim-surround'
 	Plug 'alvan/vim-closetag'
 	Plug 'mattn/emmet-vim'
 
@@ -32,12 +31,12 @@ call plug#begin('~/.config/nvim/plugged')
 	Plug 'ap/vim-css-color'
 
 	" ui
-	Plug 'gruvbox-community/gruvbox'
 	Plug 'itchyny/lightline.vim'
-	Plug 'shinchu/lightline-gruvbox.vim'
 	Plug 'chriskempson/base16-vim'
 	Plug 'mike-hearn/base16-vim-lightline'
 	Plug 'arcticicestudio/nord-vim', { 'on': 'NERDTreeToggle' }
+	Plug '~/dev/repos/vim-colorscheme'
+	Plug 'cormacrelf/vim-colors-github'
 
 	" git
 	Plug 'tpope/vim-fugitive'
@@ -54,7 +53,6 @@ set fileencoding=utf-8
 set nobackup
 set noswapfile
 set nowritebackup
-syntax on
 
 " =============================================================================
 " Options
@@ -84,11 +82,14 @@ set wrap
 " UI Options
 " =============================================================================
 
-colorscheme base16-black-metal-khold
+let g:github_colors_soft = 1
+set background=light
+let g:github_colors_block_diffmark = 0
+colorscheme github
 
 " airline
 let g:lightline = { 
-			\ 'colorscheme' : 'base16_default_dark', 
+			\ 'colorscheme' : 'github', 
 			\ }
 
 " =============================================================================
@@ -101,11 +102,10 @@ let g:closetag_filenames = '*.html,*.xhtml,*.js,*.jsx,*.ts,*.tsx'
 " NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
-
 let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=1
 let NERDTreeAutoDeleteBuffer=1
-
+call github_colors#togglebg_map('<f5>')
 
 " =============================================================================
 " Shortcuts
@@ -113,11 +113,12 @@ let NERDTreeAutoDeleteBuffer=1
 
 let mapleader="\<Space>"
 
-" Save. close and erase doc
+" Save, close, erase and execute
 nnoremap <leader>w :w<cr>
 nnoremap <leader>q :q<cr>
 nnoremap <leader>wq :wq<cr>
 nnoremap <leader>e :1,$d<cr>
+nnoremap <leader>x :!node %<cr>
 
 " Fast scrolling
 nnoremap <C-e> 10<C-e>
@@ -132,7 +133,6 @@ vnoremap <A-j> :m '>+1'<cr>
 vnoremap <A-k> :m '<-2'<cr>
 
 " NERDTree maps
-nnoremap <leader>x :!node %<cr>
 nnoremap <leader>t :NERDTreeToggle<cr>
 
 " Emmet

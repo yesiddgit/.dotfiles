@@ -39,7 +39,7 @@ pathadd $HOME/bin
 pathadd $HOME/.local/bin
 pathadd $HOME/.config/zsh/
 
-# OH My ZSH
+# Prompt
 # -------------------------------------
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -52,8 +52,37 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 # -------------------------------------
+# LS
+alias ls='ls --color=auto --group-directories-first'
+alias ll='ls -l'
+alias la='ls -lavh'
 
-source "$HOME/.config/zsh/aliases"
+# Sudoedit files
+alias svim='sudoedit'
+
+# Config files
+alias :zsh='vim ~/.zshrc'
+alias :kitty='vim ~/.config/kitty/kitty.conf'
+alias :alacritty='vim ~/.config/alacritty/alacritty.yml'
+alias :nvim='vim ~/.config/nvim/init.vim'
+alias :vim='vim ~/.vimrc'
+
+# Git
+alias gc='git commit -m'
+alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias dota='dot add '
+alias dotc='dot commit -m '
+alias dotp='dot push'
+alias dots='dot status '
+
+# Utilities
+alias vf='vifmrun'
+alias vifm='vifmrun'
+alias fonts='fc-cache -f -v'
+alias reset='cd ~; clear; source ~/.zshrc'
+alias fetch='clear && neofetch'
+alias mine='chmod -R a-x,o-w,+X '
+alias modx='chmod +x '
 
 # Autocompletion
 # -------------------------------------
