@@ -22,8 +22,10 @@ function eratosthenes(limit) {
   return primes;
 }
 let boolean = true;
+
 ! var primes = Eratosthenes(100);
 
 ! var x = 2;
 
+console.log(typeof boolean);
 console.log('An array of the prime numbers from 0 to 100: '+ primes);
