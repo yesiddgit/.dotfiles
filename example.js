@@ -27,5 +27,5 @@ let boolean = true;
 
 ! var x = 2;
 
-console.log(typeof boolean);
+console.log(typeof 42);
 console.log('An array of the prime numbers from 0 to 100: '+ primes);
