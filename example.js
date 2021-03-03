@@ -21,7 +21,7 @@ function eratosthenes(limit) {
   }
   return primes;
 }
-
+let boolean = true;
 ! var primes = Eratosthenes(100);
 
 ! var x = 2;
