@@ -83,6 +83,8 @@ class ClassWithStaticMethod {
 
 }
 
+let regex = /\s[A-Z]|(a-z)/g;
+
 console.log(ClassWithStaticMethod.staticProperty);
 // output: "someValue"
 console.log(ClassWithStaticMethod.staticMethod());
