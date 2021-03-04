@@ -1,5 +1,6 @@
 // Sieve of Eratosthenes
-
+import defaultExport from "module-name";
+export class ClassName {...}
 function eratosthenes(limit) {
   var primes = [];
   if (limit >= 2) {
