@@ -23,7 +23,7 @@ function eratosthenes(limit) {
   return primes;
 }
 let boolean = true;
-
+let ns = null;
 ! var primes = eratosthenes(100);
 
 ! var x = 2;
