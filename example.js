@@ -1,8 +1,4 @@
 // TODO FIXME XXX TBD Sieve of Eratosthenes
-
-<p id="demo"></p>
-
-<script>
 try {
   adddlert("Welcome guest!");
 }
