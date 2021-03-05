@@ -1,4 +1,15 @@
 // TODO FIXME XXX TBD Sieve of Eratosthenes
+
+<p id="demo"></p>
+
+<script>
+try {
+  adddlert("Welcome guest!");
+}
+catch(err) {
+  document.getElementById("demo").innerHTML = err.message;
+}
+</script>
 import defaultExport from "module-name";
 export class ClassName {...}
 function eratosthenes(limit) {
