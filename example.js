@@ -31,7 +31,7 @@ let boolean = true;
 function roughScale(x, base) {
   const parsed = parseInt(x, base);
   if (isNaN(parsed)) { return 0; }
-  return parsed * 100;
+  return parsed * 100 % 42 / 36 + 5 - 45;
 }
 
 console.log(roughScale(' 0xF', 16));
