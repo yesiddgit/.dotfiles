@@ -31,6 +31,14 @@ let boolean = true;
 console.log(typeof 42);
 console.log('An array of the prime numbers from 0 to 100: '+ primes);
 
+function createFile(name, temp) {
+  if (temp) {
+    fs.create(`./temp/${name}`);
+  } else {
+    fs.create(name);
+  }
+}
+
 switch (new Date().getDay()) {
   case 0:
     day = "Sunday";
