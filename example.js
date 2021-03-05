@@ -5,7 +5,7 @@ try {
 catch(err) {
   document.getElementById("demo").innerHTML = err.message;
 }
-</script>
+
 import defaultExport from "module-name";
 export class ClassName {...}
 function eratosthenes(limit) {
