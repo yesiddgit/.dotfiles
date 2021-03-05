@@ -1,4 +1,4 @@
-// Sieve of Eratosthenes
+// TODO Sieve of Eratosthenes
 import defaultExport from "module-name";
 export class ClassName {...}
 function eratosthenes(limit) {
