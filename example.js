@@ -651,7 +651,7 @@ switch (new Date().getDay()) {
   case 5:
     day = "Friday";
     break;
-  case 6:
+  case default:
     day = "Saturday";
 }
 
