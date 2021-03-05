@@ -27,6 +27,15 @@ let ns = null;
 ! var primes = eratosthenes(100);
 
 ! var x = 2;
+var person = prompt("Please enter your name", "Harry Potter");
+
+if (person != null) {
+  document.getElementById("demo").innerHTML =
+  "Hello " + person + "! How are you today?";
+}
+
+alert("Hello! I am an alert box!!");
+
 
 function roughScale(x, base) {
   const parsed = parseInt(x, base);
