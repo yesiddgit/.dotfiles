@@ -1,4 +1,6 @@
 // TODO FIXME XXX TBD Sieve of Eratosthenes
+document.getElementById("myDIV").className = "mystyle";
+
 try {
   adddlert("Welcome guest!");
 }
